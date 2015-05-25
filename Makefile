@@ -3,6 +3,12 @@ abc:
 
 crd:
 	$(MAKE) -C crd all
+
+all: abc crd
+	mv abc/*.pdf pdf
+	mv crd/*.pdf pdf
+	pdfbook pdf/*.pdf
+	mv *-book.pdf Songbook.pdf
 	
 clean:
-	rm -f *.ps *.pdf
+	rm -f *.pdf pdf/*.pdf
