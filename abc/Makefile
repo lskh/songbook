@@ -3,7 +3,7 @@ SRC=$(wildcard *.abc)
 PDF=$(SRC:.abc=.pdf)
 	
 %.pdf: %.abc
-	abcm2ps -f a5.fmt $< -O - | ps2pdf - $@
+	abcm2ps -f a5.fmt $< -O - | ps2pdf -sPAPERSIZE=a5 - $@
 	
 %_nol.pdf: %.abc
 	sed /W:/d $< | abcm2ps -M - -O - | ps2pdf - nol.pdf
