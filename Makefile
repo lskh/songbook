@@ -3,7 +3,7 @@ all: Songbook.pdf
 Songbook.pdf: pdf-abc pdf-crd
 	cp abc/*.pdf pdf
 	cp crd/*.pdf pdf
-	pdfbook pdf/*.pdf
+	pdfbook --openright true pdf/*.pdf
 	mv *-book.pdf Songbook.pdf
 	
 pdf-abc:
